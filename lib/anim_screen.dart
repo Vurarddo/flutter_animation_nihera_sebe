@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'package:self_education/widgets/rotate_transition.dart';
+
 class AnimScreen extends StatefulWidget {
   @override
   _AnimPageState createState() => _AnimPageState();
@@ -47,33 +49,6 @@ class _AnimPageState extends State<AnimScreen>
   void dispose() {
     animController.dispose();
     super.dispose();
-  }
-}
-
-class RotatingTransition extends StatelessWidget {
-  final Widget child;
-  final Animation<double> animation;
-
-  RotatingTransition({
-    @required this.child,
-    @required this.animation,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return AnimatedBuilder(
-      animation: animation,
-      child: child,
-      builder: (context, child) {
-        return Transform(
-          transform: Matrix4.skewX(0.3)
-            ..setEntry(3, 2, 0.01)
-            ..rotateX(animation.value),
-          alignment: FractionalOffset.center,
-          child: child,
-        );
-      },
-    );
   }
 }
 

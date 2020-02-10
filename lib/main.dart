@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:self_education/cardboard/cardboard_screen.dart';
-import 'package:self_education/flip_animation/flip.dart';
+import 'package:self_education/flip_animation/flip_screen.dart';
 
 void main() => runApp(MyApp());
 
@@ -13,8 +13,8 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: FlipScreen(),
-      // home: CardboardScreen(),
+      // home: FlipScreen(),
+      home: CardboardScreen(),
     );
   }
 }

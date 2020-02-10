@@ -3,6 +3,7 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 
 import 'package:self_education/flip_animation/cutted_paper_widget.dart';
+import 'package:self_education/widgets/flip_transition.dart';
 
 class FlipScreen extends StatefulWidget {
   @override
@@ -131,7 +132,7 @@ class _FlipScreenState extends State<FlipScreen>
     return Column(
       mainAxisSize: MainAxisSize.min,
       children: <Widget>[
-        FlipTransition(
+        FlipTransitionX(
           animation: _topListAnimation,
           transformAlignment: Alignment.bottomCenter,
           child: CuttedPaperWidget(
@@ -142,7 +143,7 @@ class _FlipScreenState extends State<FlipScreen>
         Padding(
           padding: EdgeInsets.only(top: 2.0),
         ),
-        FlipTransition(
+        FlipTransitionX(
           animation: _bottomListAnimation,
           transformAlignment: Alignment.topCenter,
           child: CuttedPaperWidget(
@@ -158,35 +159,5 @@ class _FlipScreenState extends State<FlipScreen>
   void dispose() {
     _controller.dispose();
     super.dispose();
-  }
-}
-
-class FlipTransition extends StatelessWidget {
-  final Animation<double> animation;
-  final AlignmentGeometry transformAlignment;
-  final Widget child;
-
-  FlipTransition({
-    Key key,
-    @required this.animation,
-    @required this.transformAlignment,
-    @required this.child,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return AnimatedBuilder(
-      animation: animation,
-      child: child,
-      builder: (context, child) {
-        return Transform(
-          transform: Matrix4.identity()
-            ..setEntry(3, 2, 0.003)
-            ..rotateX(animation.value),
-          alignment: transformAlignment,
-          child: child,
-        );
-      },
-    );
   }
 }
