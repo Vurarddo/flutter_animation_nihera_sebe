@@ -3,11 +3,15 @@ import 'package:flutter/material.dart';
 class CuttedPaperWidget extends StatelessWidget {
   final int value;
   final AlignmentGeometry alignment;
+  final Color firstColor;
+  final Color secondColor;
 
   CuttedPaperWidget({
     Key key,
     @required this.value,
     @required this.alignment,
+    this.firstColor,
+    this.secondColor,
   }) : super(key: key);
 
   @override
@@ -34,7 +38,11 @@ class CuttedPaperWidget extends StatelessWidget {
   Decoration _buildPaperDecoration() {
     return BoxDecoration(
       borderRadius: BorderRadius.circular(5),
-      color: Colors.black,
+      gradient: LinearGradient(
+        colors: [firstColor, secondColor],
+        begin: Alignment.bottomCenter,
+        end: Alignment.topCenter,
+      ),
     );
   }
 

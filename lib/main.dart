@@ -13,8 +13,8 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      // home: FlipScreen(),
-      home: CardboardScreen(),
+      home: FlipScreen(),
+      // home: CardboardScreen(),
     );
   }
 }

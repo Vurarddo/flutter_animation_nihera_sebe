@@ -116,6 +116,8 @@ class _FlipScreenState extends State<FlipScreen>
         CuttedPaperWidget(
           value: _prevuesValue,
           alignment: Alignment.topCenter,
+          firstColor: Colors.grey[600],
+          secondColor: Colors.black,
         ),
         Padding(
           padding: EdgeInsets.only(top: 2.0),
@@ -123,6 +125,8 @@ class _FlipScreenState extends State<FlipScreen>
         CuttedPaperWidget(
           value: _newValue,
           alignment: Alignment.bottomCenter,
+          firstColor: Colors.black,
+          secondColor: Colors.grey[600],
         )
       ],
     );
@@ -138,6 +142,8 @@ class _FlipScreenState extends State<FlipScreen>
           child: CuttedPaperWidget(
             value: _newValue,
             alignment: Alignment.topCenter,
+            firstColor: Colors.grey[600],
+            secondColor: Colors.black,
           ),
         ),
         Padding(
@@ -149,6 +155,8 @@ class _FlipScreenState extends State<FlipScreen>
           child: CuttedPaperWidget(
             value: _prevuesValue,
             alignment: Alignment.bottomCenter,
+            firstColor: Colors.black,
+            secondColor: Colors.grey[600],
           ),
         ),
       ],
