@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import 'package:self_education/carwash/clients/clients_scree.dart';
 import 'package:self_education/carwash/carwash_services/carwash_services_screen.dart';
 import 'package:self_education/flip_animation/flip_screen.dart';
 
@@ -13,7 +14,8 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: CarWashServicesScreen(),
+      home: ClientsScreen(),
+      // home: CarWashServicesScreen(),
       // home: FlipScreen(),
       // home: CardboardScreen(),
     );
